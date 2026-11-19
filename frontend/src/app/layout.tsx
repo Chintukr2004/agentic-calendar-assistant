@@ -28,16 +28,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   return (
-    <AuthProvider
-      projectId={projectId}
-      sessionTokenViaCookie={cookieOptions}
-      refreshTokenViaCookie={cookieOptions}
-    >
-      <html lang="en" className={cn(sans.variable, heading.variable)}>
-        <body className="min-h-svh bg-background font-sans text-foreground antialiased">
+    <html lang="en" className={cn(sans.variable, heading.variable)}>
+      <body className="min-h-svh bg-background font-sans text-foreground antialiased">
+        <AuthProvider
+          projectId={projectId}
+          sessionTokenViaCookie={cookieOptions}
+          refreshTokenViaCookie={cookieOptions}
+        >
           {children}
-        </body>
-      </html>
-    </AuthProvider>
+        </AuthProvider>
+      </body>
+    </html>
   );
 }
