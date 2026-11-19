@@ -3,7 +3,7 @@ import cors from "cors";
 import express from "express";
 import { getPool } from "./db/pool.js";
 import { connectionRouter } from "./routes/connection.routes.js";
-// import { agentRoutes } from "./routes/agent.routes.js";
+import { agentRoutes } from "./routes/agent.routes.js";
 // import { mountMcpServer } from "./mcp/mount.js";
 
 const app = express();
@@ -33,7 +33,7 @@ app.get("/health", async (_req, res) => {
 });
 
 app.use("/api/connections", connectionRouter);
-// app.use("/api/agent", agentRoutes);
+app.use("/api/agent", agentRoutes);
 
 // mountMcpServer(app);
 
